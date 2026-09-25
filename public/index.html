@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TexA Workspace</title>
+  <title>Case Writing</title>
   <!-- TinyMCE Engine -->
   <script src="https://cdn.tiny.cloud/1/tso1rmilvgtjzl2m00u2ifwhhdr8u0tqqs47r7gu04a8qwg4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
   <!-- Embedded Inline Diff Engine -->
@@ -121,11 +121,28 @@
       animation: spin 3s linear infinite;
     }
 
-    .lead-border-wrappp {
+    .lead-border-wrappppp {
+      position: relative;
+      border-radius: 12px;
+      padding: 2px;
+      background: conic-gradient(from var(--angle), #04694b, #0e89b9, #d874ab, #576409);
+      animation: spin 3s linear infinite;
+    }
+
+    .lead-border-wrapp {
       position: relative;
       border-radius: 12px;
       padding: 2px;
       background: conic-gradient(from var(--angle), #ff758c, #ff7eb3, #f8b4d9, #c084fc);
+      animation: spin 3s linear infinite;
+    }
+
+    
+    .lead-border-wrappp {
+      position: relative;
+      border-radius: 12px;
+      padding: 2px;
+      background: conic-gradient(from var(--angle), #f6d9be, #ff7eb3, #f4c2c2, #c084fc);
       animation: spin 3s linear infinite;
     }
 
@@ -166,23 +183,19 @@
     <div class="landing-card">
       <div class="team-badge">
         <span class="pulse-dot"></span>
-        <span>Team Three Bugs</span>
+        <span>Backend Active</span>
       </div>
 
-      <h1 class="brand-title">Tex<span>A</span></h1>
-      <div class="brand-subtitle">Textile AI Assistant Documentation</div>
-      
-      <div class="credit-divider">
-        <p class="credit-text">Architected & Created by</p>
-        <div class="credit-author">Black Parrot</div>
-      </div>
+      <h1 class="brand-title">Cas<span>E</span></h1>
+      <div class="brand-subtitle">Case Writing</div>
 
-      <div class="user-btn-group">
+
+      <div class="lead-border-wrappppp">
         <!-- Faculty Supervisor First -->
-        <button class="btn-user" onclick="selectUser('Prof. Satu Saha')">
+        <button class="btn-user-lead" onclick="selectUser('Shajid')">
           <div class="user-info">
-            <span class="user-name">Prof. Satu Saha</span>
-            <span class="user-role">Project Supervisor</span>
+            <span class="user-name">Shajid</span>
+            <span class="user-role">Member</span>
           </div>
           <span class="arrow">&rarr;</span>
         </button>
@@ -193,30 +206,43 @@
             <div class="user-info">
               <span class="user-name">
                 Sunny 
-                <span class="tech-tag">Lead Creator</span>
+
               </span>
-              <span class="user-role">Lead Architect & Programmer</span>
+              <span class="user-role">Member</span>
             </div>
             <span class="arrow">&rarr;</span>
           </button>
         </div>
 
         <!-- Co-Architect Third -->
-        <div class="lead-border-wrappp">
+        <div class="lead-border-wrapp">
           <button class="btn-user-lead" onclick="selectUser('Alvina')">
             <div class="user-info">
               <span class="user-name">Alvina</span>
-              <span class="user-role">Co-Architect</span>
+              <span class="user-role">Member</span>
             </div>
             <span class="arrow">&rarr;</span>
           </button>
         </div>
+
+         <!-- Co-Architect Third -->
+        <div class="lead-border-wrappp">
+          <button class="btn-user-lead" onclick="selectUser('Sumaiya')">
+            <div class="user-info">
+              <span class="user-name">Jahin</span>
+              <span class="user-role">Member</span>
+            </div>
+            <span class="arrow">&rarr;</span>
+          </button>
+        </div>
+
+        
       </div>
     </div>
   </div>
 
   <div id="navbar">
-    <div><strong>TexA Workspace</strong> — <span id="active-user-display" style="color: #38bdf8;">Selecting Profile...</span></div>
+    <div><strong>Case Writing</strong> — <span id="active-user-display" style="color: #38bdf8;">Selecting Profile...</span></div>
     <div>
       <span id="status">Connecting...</span>
       <button class="btn" onclick="saveDocument()">Save Document</button>
@@ -258,11 +284,11 @@
       height = canvas.height = window.innerHeight;
     });
 
-    const SUPABASE_URL = "https://kurzeacigxymiatiyuxu.supabase.co"; 
-    const SUPABASE_KEY = "sb_publishable_RYyFdiRHUHzPjF8f_KGz8Q_w4zMqNK7";
+    const SUPABASE_URL = "https://araxkbfltyfqcvghvgbp.supabase.co"; 
+    const SUPABASE_KEY = "sb_publishable_Dt1cfyFx8ltOcZ8atEbaNA_1ksPFXBp";
     
     const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-    const DOC_ID = 'texAR2';
+    const DOC_ID = 'case';
     let previousContent = '';
     let activeUser = '';
 
@@ -287,7 +313,7 @@
     async function initEditor() {
       document.getElementById('status').innerText = 'Fetching document...';
 
-      let initialContent = '<h1>texAR2 Workspace</h1><p>Start typing or paste your content here...</p>';
+      let initialContent = '<h1>Case Writing</h1><p>Start typing or paste your content here...</p>';
 
       try {
         const { data, error } = await db
